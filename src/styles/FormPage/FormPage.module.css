@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #000000;
+  color: white;
+  font-family: Russo One;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.button {
+  border: 1px solid white;
+  background-color: #242424;
+  font-family: Russo One;
+  border-radius: 1em;
+  padding: 15px;
+  color: white;
+  align-self: center;
+  cursor: pointer;
+  width: 13.75em;
+  font-size: 1rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 5em;
+  padding: 50px;
+  margin: 0 auto;
+}
+
+.divider {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.685);
+}
+
+@media (min-width: 1100px) and (max-width: 1300px) {
+  .main {
+    gap: 2em;
+    padding: 50px 25px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .main {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .divider {
+    width: 80%;
+  }
+}
+
+@media (max-width: 700px) {
+  .divider {
+    width: 80%;
+  }
+
+  .button {
+    width: 14em;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .divider {
+    width: 95%;
+  }
+
+  .main {
+    gap: 3em;
+    padding: 50px 20px;
+  }
+
+  .button {
+    width: 14em;
+    padding: 10px;
+    font-size: 0.8rem;
+  }
+}

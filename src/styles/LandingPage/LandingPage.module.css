@@ -1,0 +1,55 @@
+/* PageLayout.module.css */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  color: white;
+  font-family: Russo One;
+}
+
+button {
+  border: 1px solid white;
+  background-color: #242424;
+  font-family: Russo One;
+  border-radius: 1em;
+  color: white;
+  align-self: center;
+  cursor: pointer;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  padding: 20vh 0em;
+  justify-content: center;
+  align-items: center;
+  gap: 10em;
+  width: 80%;
+  margin: 0 auto;
+}
+
+@media (max-width: 1150px) {
+  .main {
+    flex-direction: column;
+    gap: 5em;
+  }
+}
+
+@media (max-width: 700px) {
+  .main {
+    padding: 15vh 0;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 550px) {
+  .main {
+    padding: 20vh 0;
+    gap: 2em;
+  }
+}

@@ -1,0 +1,231 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000000;
+  color: rgba(255, 255, 255, 0.897);
+  font-family: Russo One;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 2.5em 4em;
+}
+
+.left_side {
+  font-size: 2.5rem;
+}
+.right_side {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1em;
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10% auto;
+}
+
+.User_Profile_Logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2em;
+}
+
+.User_Img {
+  width: 24em;
+  height: 24em;
+  border: 1px solid white;
+  border-radius: 15em;
+}
+
+.User_Img img {
+  border-radius: inherit;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.Profile_Name {
+  font-size: 2rem;
+}
+.Details_Section {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  width: 38em;
+  height: 25em;
+}
+
+.Details_Section_Header {
+  margin-left: 0.5em;
+  font-size: 2.5rem;
+}
+
+.Details {
+  color: #c2c2c2;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em 0;
+  font-size: 1.2rem;
+}
+
+.Details:last-of-type {
+  justify-content: center;
+}
+
+button {
+  border: 1px solid white;
+  background-color: #242424;
+  font-family: Russo One;
+  border-radius: 0.5em;
+  padding: 10px;
+  color: white;
+  align-self: center;
+  cursor: pointer;
+  width: 8.75em;
+  font-size: 1rem;
+}
+
+@media (max-width: 1300px) {
+  main {
+    flex-direction: column;
+    gap: 6em;
+  }
+}
+@media (max-width: 900px) {
+  .right_side {
+    font-size: 1.25rem;
+  }
+  .left_side {
+    font-size: 1.75rem;
+  }
+  .User_Img {
+    width: 20em;
+    height: 20em;
+  }
+  .Profile_Name {
+    font-size: 1.75rem;
+  }
+  .Details_Section {
+    width: 35em;
+  }
+  .Details_Section_Header {
+    font-size: 2rem;
+  }
+  .Details {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 700px) {
+  .navbar {
+    padding: 2em;
+  }
+  .right_side {
+    font-size: 1rem;
+  }
+  .left_side {
+    font-size: 1.25rem;
+  }
+  .User_Img {
+    width: 16em;
+    height: 16em;
+  }
+  .Profile_Name {
+    font-size: 1.25rem;
+  }
+  .Details_Section {
+    width: 28em;
+  }
+  .Details_Section_Header {
+    font-size: 1.5rem;
+  }
+  .Details {
+    font-size: 1rem;
+  }
+}
+
+/* @media (max-width: 550px) {
+  .navbar {
+    padding: 2em;
+  }
+  .right_side {
+    font-size: 1rem;
+  }
+  .left_side {
+    font-size: 1.25rem;
+  }
+  main {
+    gap: 5em;
+  }
+  .User_Img {
+    width: 12em;
+    height: 12em;
+  }
+  .Profile_Name {
+    font-size: 1rem;
+  }
+  .Details_Section {
+    width: 22em;
+  }
+  .Details_Section_Header {
+    font-size: 1rem;
+  }
+  .Details {
+    font-size: 0.8rem;
+  }
+  button {
+    font-size: 0.65rem;
+  }
+} */
+
+@media (max-width: 550px) {
+  .navbar {
+    padding: 2em;
+  }
+  .right_side {
+    font-size: 0.8rem;
+  }
+  .left_side {
+    font-size: 1rem;
+  }
+  main {
+    margin: 0;
+    margin-top: 20%;
+    gap: 5em;
+  }
+  .User_Img {
+    width: 12em;
+    height: 12em;
+  }
+  .Profile_Name {
+    font-size: 1rem;
+  }
+  .Details_Section {
+    width: 20em;
+  }
+  .Details_Section_Header {
+    font-size: 1rem;
+  }
+  .Details {
+    font-size: 0.8rem;
+  }
+  button {
+    font-size: 0.65rem;
+  }
+}

@@ -1,0 +1,87 @@
+.detailsSection {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 38em;
+  height: 25em;
+}
+
+.detailsSectionHeader {
+  margin-left: 0.5em;
+  font-size: 2.5rem;
+}
+
+.details {
+  color: #c2c2c2;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5em 0;
+  font-size: 1.2rem;
+}
+
+.details:last-of-type {
+  justify-content: space-around;
+}
+
+.DetailsButton {
+  font-family: Russo One;
+  border-radius: 0.8em;
+  padding: 10px;
+  align-self: center;
+  cursor: pointer;
+  width: 8.75em;
+  font-size: 1rem;
+}
+
+.PreviousButton {
+  border: 1px solid white;
+  background-color: #242424;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  transition: gap 0.3s ease-in-out;
+}
+
+.PreviousButton:hover {
+  gap: 1em;
+}
+
+@media (max-width: 900px) {
+  .detailsSection {
+    width: 35em;
+  }
+  .detailsSectionHeader {
+    font-size: 2rem;
+  }
+  .details {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 700px) {
+  .detailsSection {
+    width: 28em;
+  }
+  .detailsSectionHeader {
+    font-size: 1.5rem;
+  }
+  .details {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 550px) {
+  .detailsSection {
+    width: 20em;
+  }
+  .detailsSectionHeader {
+    font-size: 1rem;
+  }
+  .details {
+    font-size: 0.8rem;
+  }
+  .DetailsButton {
+    padding: 0.8em 0em;
+    font-size: 0.65rem;
+  }
+}

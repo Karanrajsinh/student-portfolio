@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="../src/css/landing-page.css"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link href="https://fontawesome.com/icons/google?f=brands&s=solid&pc=%23ffffff">
+
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            color: white;
+            font-family: Russo One;
+        }
+
+        main {
+            display: flex;
+            flex-direction: row;
+            padding: 20vh 0em;
+            justify-content: center;
+            align-items: center;
+            gap: 10em;
+            width: 80%;
+            margin: 0 auto;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 3.125em;
+        }
+
+        .nav_sign-up_button {
+            padding: 0.625em 1.875em;
+            font-size: 1.2rem;
+        }
+
+        .left_side {
+            font-size: 2rem;
+        }
+
+        button {
+            border: 1px solid white;
+            background-color: #242424;
+            font-family: Russo One;
+            border-radius: 1em;
+            color: white;
+            align-self: center;
+            cursor: pointer;
+        }
+
+        .right_side {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .right_side a {
+            margin-right: 2em;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .hero_section {
+            display: flex;
+            flex-direction: column;
+            gap: 3em;
+            /* width: 40%;
+  max-width: 35em; */
+        }
+
+        .hero_text {
+            font-size: 3rem;
+            font-family: Playfair Display;
+            font-weight: 100;
+            /* width: 15em; */
+        }
+
+        .hero_sign-up_button {
+            font-size: 1.2rem;
+            padding: 1em 3.125em;
+        }
+
+        .img_section {
+            width: 60em;
+            height: 23.75em;
+        }
+
+        .img_section img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+
+
+        @media (max-width: 1500px) {
+            .hero_text {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 1400px) {
+            .hero_text {
+                font-size: 2rem;
+            }
+
+            .img_section {
+                width: 50em;
+                height: 20em;
+            }
+        }
+
+        @media (max-width: 1150px) {
+            main {
+                flex-direction: column;
+                gap: 5em;
+            }
+
+            .hero_text {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 800px) {
+            .navbar {
+                width: 100%;
+                align-items: center;
+                padding: 2em 1em 2em 3em;
+            }
+
+            .left_side {
+                font-size: 1.25rem;
+            }
+
+            .right_side,
+            .nav_sign-up_button {
+                font-size: 0.8rem;
+            }
+
+            .nav_sign-up_button {
+                padding: 0.4em 1.5em;
+            }
+        }
+
+        @media (max-width: 700px) {
+            main {
+                padding: 15vh 0;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .hero_text {
+                font-size: 1.5rem;
+            }
+
+            .img_section {
+                align-self: center;
+                width: 20em;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .navbar {
+                padding: 2em 1em;
+            }
+
+            .left_side {
+                font-size: 1rem;
+            }
+
+            .right_side,
+            .nav_sign-up_button {
+                font-size: 0.75rem;
+            }
+
+            .hero_sign-up_button {
+                font-size: 1rem;
+                padding: 1em 1.5em;
+            }
+        }
+
+        @media (max-width: 550px) {
+            main {
+                padding: 20vh 0;
+                gap: 2em;
+            }
+
+            .hero_text {
+                font-size: 1.125rem;
+            }
+
+            .img_section {
+                width: 15em;
+                height: 15em;
+            }
+
+            .hero_sign-up_button {
+                font-size: 1rem;
+                padding: 0.4em 1.5em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="left_side">
+            <a href="">Student Portfolio</a>
+        </div>
+        <div class="right_side">
+            <a href="">About</a>
+            <button class="sign_up nav_sign-up_button">Sign Up</button>
+        </div>
+    </nav>
+    <main>
+        <section class="hero_section">
+            <div class="hero_text">
+                <h2>Make your portfolio,
+                    Show your achievements
+                </h2>
+            </div>
+            <button class="sign_up hero_sign-up_button">Sign Up</button>
+        </section>
+        <section class="img_section">
+            <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/76a78dfd13796c9f7c4fc2ca2666eee22ce1c5c6bf7e1ebcb1b7cb06b81d0a1b?apiKey=8443185ec024486c9c31dc7724ae2210"
+                alt="Img">
+        </section>
+    </main>
+
+</body>
+
+</html>

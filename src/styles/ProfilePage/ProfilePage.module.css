@@ -1,0 +1,45 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #000000;
+  color: rgba(255, 255, 255, 0.897);
+  font-family: Russo One;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 8% auto;
+}
+.detail_divider {
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.685);
+}
+@media (max-width: 1300px) {
+  body {
+    background-color: white;
+  }
+  .main {
+    flex-direction: column;
+    gap: 6em;
+  }
+  .detail_divider {
+    width: 100%;
+  }
+}
+
+@media (max-width: 550px) {
+  .main {
+    margin: 0;
+    margin-top: 10%;
+    gap: 5em;
+  }
+}

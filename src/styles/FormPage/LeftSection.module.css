@@ -1,0 +1,49 @@
+.Left_Section {
+  margin-right: 10em;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.Upload_Img_Section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Profile_Img {
+  border-radius: 20em;
+  border: 2px solid rgba(245, 245, 245, 0.733);
+  height: 380px;
+  width: 380px;
+  margin-bottom: 2.5em;
+}
+
+.Profile_Img img {
+  border-radius: inherit;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 1em;
+}
+
+@media (min-width: 1100px) and (max-width: 1300px) {
+  .Left_Section {
+    margin-right: 2.5em;
+  }
+}
+
+@media (max-width: 1100px) {
+  .Left_Section {
+    margin: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .Profile_Img {
+    height: 250px;
+    width: 250px;
+  }
+}

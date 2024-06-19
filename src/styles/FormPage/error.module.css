@@ -1,0 +1,17 @@
+.error {
+  font-size: 1rem;
+  color: rgba(219, 80, 80, 0.623);
+  padding: 5px 10px;
+  background-color: rgba(73, 40, 44, 0.425);
+  margin-top: 0.8em;
+  text-align: left;
+  width: max-content;
+  border-radius: 0.25em;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+@media (max-width: 550px) {
+  .error {
+    font-size: 0.75rem;
+  }
+}

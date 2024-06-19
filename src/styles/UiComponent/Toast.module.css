@@ -1,0 +1,10 @@
+.Login {
+  min-width: 21em;
+  font-size: 1.25rem;
+}
+
+@media (max-width: 550px) {
+  .Login {
+    font-size: 0.8rem;
+  }
+}

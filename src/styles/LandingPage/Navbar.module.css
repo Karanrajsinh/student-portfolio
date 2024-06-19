@@ -1,0 +1,67 @@
+/* Navbar.module.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 3.125em;
+}
+
+.nav_sign_up_button {
+  padding: 0.625em 1.875em;
+  font-size: 1.2rem;
+}
+
+.left_side {
+  font-size: 2rem;
+}
+
+.right_side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.right_side a {
+  margin-right: 2em;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    width: 100%;
+    align-items: center;
+    padding: 2em 1em 2em 3em;
+  }
+
+  .left_side {
+    font-size: 1.25rem;
+  }
+
+  .right_side,
+  .nav_sign_up_button {
+    font-size: 0.8rem;
+  }
+
+  .nav_sign_up_button {
+    padding: 0.4em 1.5em;
+  }
+}
+
+@media (max-width: 650px) {
+  .navbar {
+    padding: 2em 1em;
+  }
+
+  .left_side {
+    font-size: 1rem;
+  }
+
+  .right_side,
+  .nav_sign_up_button {
+    font-size: 0.75rem;
+  }
+}

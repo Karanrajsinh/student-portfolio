@@ -1,0 +1,13 @@
+.LoginLayout {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5em;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.LoginLayout p {
+  font-size: 2rem;
+}
