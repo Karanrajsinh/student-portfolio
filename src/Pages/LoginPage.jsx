@@ -39,7 +39,7 @@ function Login() {
         anchor:{textDecoration:"none"},
         divider:{backgroundColor:'#aaaaaa'}
        },
-      }} providers={['google']} theme='dark' redirectTo='http://localhost:5173/form' />
+      }} providers={['google']} theme='dark' redirectTo='https://student-portfolio-kv.netlify.app/form' />
       </div>)
   }
   else {
