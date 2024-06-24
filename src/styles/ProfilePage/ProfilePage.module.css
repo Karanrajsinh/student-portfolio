@@ -17,7 +17,7 @@ a {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  margin: 8% auto;
+  margin: 4% auto;
 }
 .detail_divider {
   border-radius: 10px;

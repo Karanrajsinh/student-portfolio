@@ -4,6 +4,15 @@
   flex-direction: column;
   gap: 3em;
 }
+.button {
+  border: 1px solid white;
+  background-color: #242424;
+  font-family: Russo One;
+  border-radius: 1em;
+  color: white;
+  align-self: center;
+  cursor: pointer;
+}
 
 .hero_text {
   font-size: 3rem;

@@ -4,10 +4,12 @@
   font-size: 3rem;
   display: flex;
   padding: 50px;
+  margin-top: 1em;
 }
 
 @media (max-width: 700px) {
   .navbar {
+    margin: 0;
     font-size: 1.5rem;
   }
 }

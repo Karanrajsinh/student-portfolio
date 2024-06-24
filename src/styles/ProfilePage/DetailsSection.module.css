@@ -31,12 +31,13 @@
   align-self: center;
   cursor: pointer;
   width: 8.75em;
+  background-color: #242424;
+  color: white;
   font-size: 1rem;
+  border: 1px solid white;
 }
 
 .PreviousButton {
-  border: 1px solid white;
-  background-color: #242424;
   display: flex;
   justify-content: center;
   align-items: center;

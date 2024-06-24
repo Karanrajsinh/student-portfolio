@@ -16,7 +16,7 @@ const RightSection = () => {
   function onSubmit(data)
   {
     setDetails(data)
-    navigate('/profile')
+    navigate('/login/create-profile')
   }
 
   return (
@@ -28,18 +28,8 @@ const RightSection = () => {
               value: /^[A-Za-z\s]+$/,
               message: 'This Field Must Contain Only Letters'
             }})} className={styles.input} />
-          {errors.fullName && <Error>{errors.fullName.message}</Error>}
+          {errors.name && <Error>{errors.name.message}</Error>}
         </div>
-
-        <div className={styles.details}>
-          <label htmlFor="mail">Email Id</label>
-          <input type="email" id="mail" {...register('email',{required: 'This Field Cannot Be Empty',pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: 'Invalid E-mail Address'
-            }})} className={styles.input} />
-          {errors.email && <Error>{errors.email.message}</Error>}
-        </div>
-
         <div className={styles.details}>
           <label htmlFor="number">Phone Number</label>
           <input type="tel"  id="number" {...register('phone', {

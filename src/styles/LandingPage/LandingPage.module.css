@@ -11,16 +11,6 @@ body {
   font-family: Russo One;
 }
 
-button {
-  border: 1px solid white;
-  background-color: #242424;
-  font-family: Russo One;
-  border-radius: 1em;
-  color: white;
-  align-self: center;
-  cursor: pointer;
-}
-
 .main {
   display: flex;
   flex-direction: row;

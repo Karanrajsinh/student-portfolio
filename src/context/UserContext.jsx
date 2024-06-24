@@ -1,4 +1,5 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext,  useState } from "react";
+import supabase from "../services/supabase";
 
 
 
@@ -6,31 +7,75 @@ const UserContext = createContext();
 
 
 function UserDetailsProvider({children}) {
-    const DEFAULT_URL = "https://cdn.builder.io/api/v1/image/assets/TEMP/76a78dfd13796c9f7c4fc2ca2666eee22ce1c5c6bf7e1ebcb1b7cb06b81d0a1b?apiKey=8443185ec024486c9c31dc7724ae2210"
+    const DEFAULT_URL = "../../public/Img/user2.jpg"
     const [userImage, setUserImage] = useState(DEFAULT_URL);
     const [userDetails, setUserDetails] = useState({});
     const [isLoading , setIsLoading] = useState(false);
+    const [login,setLogin] = useState(false);
+    const [email ,setEmail] = useState("");
+    const [userID , setUserID] = useState("");
+    const [newUser , setNewUser] = useState();
 
+
+    
+    
+    async function getData()
+    {
+        const {data} = await supabase.auth.getUser()
+        setLogin(Boolean(data.user))
+        if(data.user)
+            {
+                setEmail(data.user.email)
+                setUserID(data.user.id)
+                supabase.from("User Details").select('*').eq("user_id",data.user.id).then(({data})=>
+                {
+                    const isNew = Boolean(!data[0]?.created_at)
+                    return setNewUser(isNew)
+                })
+            }
+    }
+    
+    // useEffect(()=>
+    // {
+    //     getData();
+    // },[])
+    
     function setDetails(data)
     {
         setUserDetails(data)
     }
-
+    
     function setImage(image)
     {
         setUserImage(image);
     }
-
+    async function getUserDetails()
+    {
+       let {data ,error} = await supabase.from("User Details").select('*').eq("user_id",userID)
+       if(error) console.log(error.message)
+       if(data) return data
+    }
+    
 
     return (
         <UserContext.Provider
             value={{
+                userID,
+                setUserID,
+                login,
+                setLogin,
+                email,
+                setEmail,
                 userDetails,
+                getUserDetails,
                 userImage,
                 setDetails,
                 setImage,
                 isLoading,
-                setIsLoading 
+                setIsLoading,
+                newUser ,
+                setNewUser,
+                getData
             }}
          >
             {children}

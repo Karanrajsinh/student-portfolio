@@ -4,6 +4,7 @@ import RightSection from "../components/FormPage/RightSection"
 import styles from '../styles/FormPage/FormPage.module.css'
 
 function FormPage() {
+
     return (
     <>
         <Navbar />

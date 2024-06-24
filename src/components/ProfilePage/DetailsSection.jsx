@@ -2,46 +2,41 @@ import { useNavigate } from 'react-router-dom';
 import { useUserDetails } from '../../context/UserContext';
 import styles from '../../styles/ProfilePage/DetailsSection.module.css';
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { useEffect } from 'react';
 import toast from 'react-hot-toast';
 import supabase from '../../services/supabase'
+import Spinner from '../Spinner';
+
 
 
 const DetailsSection = () => {
   
   const navigate = useNavigate();
-  const {userDetails,setIsLoading } = useUserDetails();
-  const isEmpty = (obj) => {
-    return Object.keys(obj).length === 0;
-  };
-
-  useEffect(()=>
-  {
-    if(isEmpty(userDetails)) navigate(-1);
-  },[])
+  const {userDetails,email,isLoading,setIsLoading } = useUserDetails();
+  const  details = {email,...userDetails}
 
   function onClick(){
-    navigate('/form');
+    navigate('/login/form');
   }
 
- 
   async function createUser()
   {
     setIsLoading(true);
   try {
   const { data, error } = await 
   supabase.from('User Details')
-  .insert([userDetails])
+  .insert(details)
   .select()
   if(error) {
     setIsLoading(false)
-    console.log(error),
-    toast.error('profile was not created due to an error')
+    console.log(error)
+    if(error.code === "23502") error.message = "cannot create profile without an email"
+    if(error.code === "23505") error.message = "profile is already created"
+    toast.error(error.message)
   }
   if(data) {
     setIsLoading(false)
-    console.log('sucessfull'),
     toast.success('Profile Was Created Successfully')
+    navigate('/dashboard')
   }
   
   return data;
@@ -53,7 +48,11 @@ const DetailsSection = () => {
 }
 }
 
+
+
   return(
+    <>
+    {isLoading && <Spinner/>}
   <section className={styles.detailsSection}>
     <header className={styles.detailsSectionHeader}>
       Details
@@ -62,19 +61,19 @@ const DetailsSection = () => {
     <div className={styles.detailsList}>
       <div className={styles.details}>
         <p>E-mail</p>
-        <p>{userDetails?.email}</p>
+        <p>{details?.email}</p>
       </div>
       <div className={styles.details}>
         <p>Phone No.</p>
-        <p>{userDetails?.phone}</p>
+        <p>{details?.phone}</p>
       </div>
       <div className={styles.details}>
         <p>Degree</p>
-        <p>{userDetails?.degree}</p>
+        <p>{details?.degree}</p>
       </div>
       <div className={styles.details}>
         <p>University</p>
-        <p>{userDetails?.university}</p>
+        <p>{details?.university}</p>
       </div>
       <div className={styles.details}>
         <button className={`${styles.DetailsButton} ${styles.PreviousButton}`} onClick={onClick}><FaArrowLeftLong />
@@ -83,7 +82,9 @@ const DetailsSection = () => {
         <button className={styles.DetailsButton} onClick={createUser}>Confirm</button>
       </div>
     </div>
-  </section>);
+  </section>
+    </>
+  );
 };
 
 export default DetailsSection;

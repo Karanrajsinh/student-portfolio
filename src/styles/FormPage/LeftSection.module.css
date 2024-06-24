@@ -14,7 +14,7 @@
 }
 
 .Profile_Img {
-  border-radius: 20em;
+  border-radius: 25em;
   border: 2px solid rgba(245, 245, 245, 0.733);
   height: 380px;
   width: 380px;
@@ -26,7 +26,6 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
-  margin-bottom: 1em;
 }
 
 @media (min-width: 1100px) and (max-width: 1300px) {
