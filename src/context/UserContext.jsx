@@ -1,13 +1,12 @@
 import { createContext, useContext,  useState } from "react";
 import supabase from "../services/supabase";
-
-
+import img from '../../public/Img/user2.jpg'
 
 const UserContext = createContext();
 
 
 function UserDetailsProvider({children}) {
-    const DEFAULT_URL = "../../public/Img/user2.jpg"
+    const DEFAULT_URL = img;
     const [userImage, setUserImage] = useState(DEFAULT_URL);
     const [userDetails, setUserDetails] = useState({});
     const [isLoading , setIsLoading] = useState(false);
@@ -34,11 +33,7 @@ function UserDetailsProvider({children}) {
                 })
             }
     }
-    
-    // useEffect(()=>
-    // {
-    //     getData();
-    // },[])
+
     
     function setDetails(data)
     {

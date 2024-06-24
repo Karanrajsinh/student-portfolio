@@ -1,6 +1,6 @@
 import { useUserDetails } from '../../context/UserContext';
 import styles from '../../styles/FormPage/LeftSection.module.css';
-import btnstyles from '../../styles/FormPage/FormPage.module.css'
+import btnstyles from '../../styles/FormPage/FormPage.module.css';
 
 const LeftSection = () => {
   const {userImage ,setImage} = useUserDetails()
