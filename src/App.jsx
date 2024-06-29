@@ -8,6 +8,7 @@ import styles from "./styles/UiComponent/Toast.module.css"
 import DashBoardPage from './Pages/DashBoardPage'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+import ProtectedAuthRoute from './components/ProtectedAuthRoute'
 import ProtectedRoute from './components/ProtectedRoute'
 
 
@@ -29,28 +30,39 @@ function App() {
     },
     {
       path:'login',
+      element:<Login/>
+    },
+    {
+      path:'profile',
       element:
-      <ProtectedRoute>
+      <ProtectedAuthRoute>
         <Outlet/>
-      </ProtectedRoute>,
-      children:[
+      </ProtectedAuthRoute>,
+      children:
+      [
         {
-          index: true,
-          element:<Login/>
+          index:true,
+          // path:"form",
+          element:<FormPage/>
         },
         {
-          path:'form',
-          element:<FormPage/> ,
-        },
-        {
-          path:'create-profile',
-          element:<ProfilePage/> ,
+          path:"create",
+          element:<ProfilePage/>
         }
       ]
     },
     {
       path:"/dashboard",
-      element :<DashBoardPage/> ,
+      element :
+      <ProtectedRoute>
+        <Outlet/>
+      </ProtectedRoute>,
+      children:[
+        {
+          index:true,
+          element:<DashBoardPage/>
+        }
+      ]
     }
   ])
   

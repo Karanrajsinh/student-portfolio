@@ -9,7 +9,6 @@ const LeftSection = () => {
     const file = event.target.files[0];
     setImage(URL.createObjectURL(file));
   };
-  localStorage.setItem('img',JSON.stringify(userImage))
   return (
     <section className={styles.Left_Section}>
       <div className={styles.Upload_Img_Section}>

@@ -13,7 +13,7 @@ const HeroSection = () => {
     const toNavigate = () => {
         if(login && newUser === true) 
         {
-            link = '/form';
+            link = '/profile';
             message = 'Create Your Profile'
         }
         if(newUser === false) 

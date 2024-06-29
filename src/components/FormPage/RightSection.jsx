@@ -12,11 +12,12 @@ const RightSection = () => {
   const { setDetails, userDetails } = useUserDetails();
   const {register ,handleSubmit ,formState: { errors } } = useForm({defaultValues : userDetails});
 
+  
 
   function onSubmit(data)
   {
     setDetails(data)
-    navigate('/login/create-profile')
+    navigate('/profile/create')
   }
 
   return (

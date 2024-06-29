@@ -5,8 +5,11 @@ import supabase from '../services/supabase';
 
 
 
+
 function Login() {
     
+
+    console.log('h')
     return (
     <div className={styles.LoginLayout}>
     <p>Student Portfolio</p>
@@ -19,7 +22,7 @@ function Login() {
         anchor:{textDecoration:"none"},
         divider:{backgroundColor:'#aaaaaa'}
        },
-      }} providers={['google']} theme='dark' redirectTo="http://student-portfolio-kv.netlify.app/" />
+      }} providers={['google']} theme='dark' redirectTo="http://localhost:5173/profile" />
       </div>)
 
 }

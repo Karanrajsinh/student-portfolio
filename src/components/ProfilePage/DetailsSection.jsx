@@ -5,17 +5,23 @@ import { FaArrowLeftLong } from "react-icons/fa6";
 import toast from 'react-hot-toast';
 import supabase from '../../services/supabase'
 import Spinner from '../Spinner';
+import { useEffect } from 'react';
 
 
 
 const DetailsSection = () => {
-  
   const navigate = useNavigate();
   const {userDetails,email,isLoading,setIsLoading } = useUserDetails();
   const  details = {email,...userDetails}
 
+
+  useEffect(()=>
+  {
+    if(!userDetails.name) navigate('/profile');
+  })
+
   function onClick(){
-    navigate('/login/form');
+    navigate('/profile');
   }
 
   async function createUser()
@@ -52,7 +58,7 @@ const DetailsSection = () => {
 
   return(
     <>
-    {isLoading && <Spinner/>}
+    {isLoading && <Spinner message={'Creating Your Profile'}/>}
   <section className={styles.detailsSection}>
     <header className={styles.detailsSectionHeader}>
       Details

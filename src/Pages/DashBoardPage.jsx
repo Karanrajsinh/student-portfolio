@@ -1,31 +1,20 @@
-// import { useEffect } from "react"
 import supabase from "../services/supabase"
 import { useUserDetails } from "../context/UserContext"
 import { useQuery } from "@tanstack/react-query";
 import Spinner from "../components/Spinner";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import getUser from "../services/getUser";
 
 function DashBoardPage() {
 
-    const {getData, login,email ,getUserDetails ,userID , setEmail , setIsLoading ,  isLoading ,setLogin ,newUser , setNewUser} = useUserDetails();
+    const { userID , setEmail , setIsLoading ,  isLoading ,setLogin  , setNewUser} = useUserDetails();
     const navigate = useNavigate();
-    useEffect(()=>
-    {
-        getData();
-    })
-    useEffect(()=>
-    {
-        console.log(userID)
-        if(newUser === true || !login) navigate('/login/form');
-        
-    },[newUser,userID,login,navigate,email])
-    
-    
-    const {data , isLoading : isFetching ,error} = useQuery({
+
+
+    const {data , isFetching ,error} = useQuery({
         queryKey : ['user'],
-        queryFn: getUserDetails,
+        queryFn: () => getUser(userID),
         refetchOnMount: false,
         enabled : userID !== "" || userID === undefined || userID === null
     })

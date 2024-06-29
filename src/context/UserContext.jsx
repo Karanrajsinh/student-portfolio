@@ -1,4 +1,4 @@
-import { createContext, useContext,  useState } from "react";
+import { createContext, useContext,  useEffect,  useState } from "react";
 import supabase from "../services/supabase";
 import img from '../../public/Img/user2.jpg'
 
@@ -14,26 +14,27 @@ function UserDetailsProvider({children}) {
     const [email ,setEmail] = useState("");
     const [userID , setUserID] = useState("");
     const [newUser , setNewUser] = useState();
-
-
     
+  
     
-    async function getData()
+   useEffect(()=>
     {
-        const {data} = await supabase.auth.getUser()
-        setLogin(Boolean(data.user))
-        if(data.user)
-            {
-                setEmail(data.user.email)
-                setUserID(data.user.id)
-                supabase.from("User Details").select('*').eq("user_id",data.user.id).then(({data})=>
-                {
-                    const isNew = Boolean(!data[0]?.created_at)
-                    return setNewUser(isNew)
-                })
-            }
-    }
-
+        
+        supabase.auth.getUser().then(({data})=>
+        {
+            { setLogin(Boolean(data.user))
+                if(data.user)
+                    {
+                        setEmail(data.user.email)
+                        setUserID(data.user.id)
+                        supabase.from("User Details").select('*').eq("user_id",data.user.id).then(({data})=>
+                        {
+                            const isNew = Boolean(!data[0]?.created_at)
+                            return setNewUser(isNew)
+                        })
+                    }}
+        })
+    }) 
     
     function setDetails(data)
     {
@@ -43,12 +44,6 @@ function UserDetailsProvider({children}) {
     function setImage(image)
     {
         setUserImage(image);
-    }
-    async function getUserDetails()
-    {
-       let {data ,error} = await supabase.from("User Details").select('*').eq("user_id",userID)
-       if(error) console.log(error.message)
-       if(data) return data
     }
     
 
@@ -62,7 +57,6 @@ function UserDetailsProvider({children}) {
                 email,
                 setEmail,
                 userDetails,
-                getUserDetails,
                 userImage,
                 setDetails,
                 setImage,
@@ -70,7 +64,6 @@ function UserDetailsProvider({children}) {
                 setIsLoading,
                 newUser ,
                 setNewUser,
-                getData
             }}
          >
             {children}
